@@ -1,1 +1,2 @@
 c:\users\robert\desktop\temple\CIS3309\Minesweeper\Minesweeper\bin\Debug\Minesweeper.exe.config
+C:\Users\Lauren Maslanka\Documents\LAB6\MineSweeper\Minesweeper\bin\Debug\Minesweeper.exe.config
