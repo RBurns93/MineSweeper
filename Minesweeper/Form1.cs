@@ -10,15 +10,24 @@ using System.Windows.Forms;
 
 namespace Minesweeper
 {
-    public partial class Form1 : Form
+    public partial class InitializationForm : Form
     {
-
 
         //GIT COMMIT YOOOOOOOO
 
-        public Form1()
+        public InitializationForm()
         {
             InitializeComponent();
+            radBtnEasy.Checked = true;
         }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MineField mineField = new MineField(this);
+            mineField.Show();
+            
+        }
+        
     }
 }
