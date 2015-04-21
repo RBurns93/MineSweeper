@@ -16,7 +16,7 @@ namespace Minesweeper
     {
         private InitializationForm initForm;
         public int mode;
-        private PictureBox[,] pbArr;
+        private PictureTile[,] ptArr;
         private int numMines;
         private SweeperGame sg;
 
@@ -55,28 +55,31 @@ namespace Minesweeper
 
         public void makeEasy()
         {
-            this.Size = new System.Drawing.Size(300, 300);
+            this.Size = new System.Drawing.Size(450, 450);
             this.numMines = 10;
-            pbArr = new PictureBox[9, 9];
+            ptArr = new PictureTile[9, 9];
 
             for(int i = 0; i < 9; i++){
                 for (int j = 0; j < 9; j++ )
                 {
-                    pbArr[i, j] = new PictureBox();
-                    pbArr[i, j].Location = new Point(j * 32 + 50, i * 32 + 50);
-                    pbArr[i, j].BorderStyle = BorderStyle.Fixed3D;
-                    pbArr[i, j].Visible = true;
-                    pbArr[i, j].Width = 32;
-                    pbArr[i, j].Height = 32;
-                    pbArr[i, j].BringToFront();
+                    ptArr[i, j] = new PictureTile(i, j);
+                    ptArr[i, j].Location = new Point(j * 35 + 50, i * 32 + 50);
+                    ptArr[i, j].BorderStyle = BorderStyle.FixedSingle;
+                    ptArr[i, j].Visible = true;
+                    ptArr[i, j].Width = 35;
+                    ptArr[i, j].Height = 35;
+                    ptArr[i, j].BringToFront();
+                    ptArr[i, j].Image = Image.FromFile("../../Images/BoardTile_UnClicked.png");
 
-                    pbArr[i, j].MouseClick += new MouseEventHandler((o, a) =>
+                    ptArr[i, j].MouseClick += new MouseEventHandler((o, a) =>
                     {
-                        PictureBox pb = ((PictureBox)o);
+                        PictureTile pt = ((PictureTile)o);
+                        pt.Image = Image.FromFile("../../Images/EmptyTile.png");
+                        
                         
                     });
 
-                    this.Controls.Add(pbArr[i, j]);
+                    this.Controls.Add(ptArr[i, j]);
 
                 }
             }
@@ -85,63 +88,78 @@ namespace Minesweeper
 
         public void makeMedium()
         {
-            this.Size = new System.Drawing.Size(450, 450);
+            this.Size = new System.Drawing.Size(700, 700);
             this.numMines = 40;
-            pbArr = new PictureBox[16, 16];
+            ptArr = new PictureTile[16, 16];
 
             for (int i = 0; i < 16; i++)
             {
                 for (int j = 0; j < 16; j++)
                 {
 
-                    pbArr[i, j] = new PictureBox();
-                    pbArr[i, j].Location = new Point(j * 32 + 55, i * 32 + 60);
-                    pbArr[i, j].BorderStyle = BorderStyle.Fixed3D;
-                    pbArr[i, j].Visible = true;
-                    pbArr[i, j].Width = 32;
-                    pbArr[i, j].Height = 32;
-                    pbArr[i, j].BringToFront();
-                    this.Controls.Add(pbArr[i, j]);
+                    ptArr[i, j] = new PictureTile(i, j);
+                    ptArr[i, j].Location = new Point(j * 35 + 50, i * 32 + 50);
+                    ptArr[i, j].BorderStyle = BorderStyle.FixedSingle;
+                    ptArr[i, j].Visible = true;
+                    ptArr[i, j].Width = 35;
+                    ptArr[i, j].Height = 35;
+                    ptArr[i, j].BringToFront();
+                    ptArr[i, j].Image = Image.FromFile("../../Images/BoardTile_UnClicked.png");
 
-                    pbArr[i, j].MouseClick += new MouseEventHandler((o, a) =>
+                    ptArr[i, j].MouseClick += new MouseEventHandler((o, a) =>
                     {
-
-
+                        PictureTile pt = ((PictureTile)o);
+                        pt.Image = Image.FromFile("../../Images/EmptyTile.png");
 
                     });
 
+                    this.Controls.Add(ptArr[i, j]);
+                   
                 }
             }
         }
 
         public void makeHard()
         {
-            this.Size = new System.Drawing.Size(715, 450);
+            this.Size = new System.Drawing.Size(1150, 650);
             this.numMines = 99;
-            pbArr = new PictureBox[16, 30];
+            ptArr = new PictureTile[16, 30];
 
             for (int i = 0; i < 16; i++)
             {
                 for (int j = 0; j < 30; j++)
                 {
 
-                    pbArr[i, j] = new PictureBox();
-                    pbArr[i, j].Location = new Point(j * 32 + 50, i * 32 + 70);
-                    pbArr[i, j].BorderStyle = BorderStyle.Fixed3D;
-                    pbArr[i, j].Visible = true;
-                    pbArr[i, j].Width = 20;
-                    pbArr[i, j].Height = 20;
-                    pbArr[i, j].BringToFront();
+                    ptArr[i, j] = new PictureTile(i, j);
+                    ptArr[i, j].Location = new Point(j * 35 + 50, i * 32 + 50);
+                    ptArr[i, j].BorderStyle = BorderStyle.FixedSingle;
+                    ptArr[i, j].Visible = true;
+                    ptArr[i, j].Width = 35;
+                    ptArr[i, j].Height = 35;
+                    ptArr[i, j].BringToFront();
+                    ptArr[i, j].Image = Image.FromFile("../../Images/BoardTile_UnClicked.png");
 
-                    pbArr[i, j].MouseClick += new MouseEventHandler((o, a) => {
-                        
-
+                    ptArr[i, j].MouseClick += new MouseEventHandler((o, a) =>
+                    {
+                        PictureTile pt = ((PictureTile)o);
+                        pt.Image = Image.FromFile("../../Images/EmptyTile.png");
 
                     });
 
-                    this.Controls.Add(pbArr[i, j]);
+                    this.Controls.Add(ptArr[i, j]);
 
                 }
+            }
+        }
+
+        public class PictureTile : PictureBox
+        {
+            public int x, y;
+
+            public PictureTile(int x, int y)
+            {
+                this.x = x;
+                this.y = y;
             }
         }
     }
