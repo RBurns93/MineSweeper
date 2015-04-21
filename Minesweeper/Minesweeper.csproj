@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SweeperGame.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,10 +88,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\blankTile.jpg" />
-    <Content Include="Images\BombTile.png" />
     <Content Include="Images\FormIcon.png" />
-    <Content Include="Images\Number_1_Tile.jpg" />
     <Content Include="Images\Number_2_Tile.png" />
     <Content Include="Images\Number_3_Tile.png" />
     <Content Include="Images\RedFlag.png" />

@@ -23,8 +23,19 @@ namespace Minesweeper
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
-            MineField mineField = new MineField(this);
+            int mode;
+
+            if(radBtnEasy.Checked){
+                mode = 1;
+            }else if(radBtnMedium.Checked){
+                mode = 2;
+            }else{
+                mode = 3;
+            }
+
+            MineField mineField = new MineField(this, mode);
             mineField.Show();
             
         }
