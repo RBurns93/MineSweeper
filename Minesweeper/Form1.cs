@@ -29,10 +29,24 @@ namespace Minesweeper
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             users.setUserName(txtBName.Text);
 
+=======
+            
+>>>>>>> 1d2ef488c6aa973c1bc1c53111e8f7c69260ff96
             this.Hide();
-            MineField mineField = new MineField(this);
+            int mode;
+
+            if(radBtnEasy.Checked){
+                mode = 1;
+            }else if(radBtnMedium.Checked){
+                mode = 2;
+            }else{
+                mode = 3;
+            }
+
+            MineField mineField = new MineField(this, mode);
             mineField.Show();
             
         }

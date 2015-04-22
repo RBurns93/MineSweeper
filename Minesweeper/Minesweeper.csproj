@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="ScoreBoardDBDataSet.cs">
       <DependentUpon>ScoreBoardDBDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -69,6 +70,9 @@
       <DependentUpon>ScoreBoardDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Users.cs" />
+=======
+    <Compile Include="SweeperGame.cs" />
+>>>>>>> 1d2ef488c6aa973c1bc1c53111e8f7c69260ff96
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +113,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Content Include="Images\FormIcon.png" />
     <Content Include="Images\Number_2_Tile.png" />
     <Content Include="Images\Number_3_Tile.png" />
@@ -116,6 +121,36 @@
     <Content Include="Images\StandardSmileyFace.png" />
     <Content Include="Images\SunglassesSmileyFace.png" />
     <Content Include="ScoreBoardDB.accdb">
+=======
+    <Content Include="Images\BoardTile_UnClicked.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Bomb_Tile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\EmptyTile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\FormIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Number_1_Tile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Number_2_Tile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Number_3_Tile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\RedFlag.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\StandardSmileyFace.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\SunglassesSmileyFace.png">
+>>>>>>> 1d2ef488c6aa973c1bc1c53111e8f7c69260ff96
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
